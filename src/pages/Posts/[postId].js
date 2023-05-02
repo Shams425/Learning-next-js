@@ -13,6 +13,20 @@ function PostDetails({ post }) {
 
 export default PostDetails;
 
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: { postId: `1` },
+      },
+      {
+        params: { postId: `2` },
+      },
+    ],
+    fallback: false,
+  };
+}
+
 export async function getStaticProps(context) {
   const { params } = context;
   const response = await fetch(
