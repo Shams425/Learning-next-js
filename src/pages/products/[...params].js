@@ -15,7 +15,11 @@ function Products() {
       </>
     );
   } else {
-    return <>Products Home Page</>;
+    return (
+      <>
+        <h2>Product Home Page</h2>
+      </>
+    );
   }
 }
 
