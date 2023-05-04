@@ -24,5 +24,22 @@
       "description": "Product 4 description",
       "price": 100
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Coding",
+      "description": "post 1 description"
+    },
+    {
+      "id": 2,
+      "title": "Sports",
+      "description": "post 2 description"
+    },
+    {
+      "id": 3,
+      "title": "Cooking",
+      "description": "post 3 description"
+    }
   ]
 }

@@ -1,6 +1,10 @@
 const { useRouter } = require("next/router");
 
 function PostDetails({ post }) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <h1>Loading . . .</h1>;
+  }
   return (
     <div key={post.id}>
       <h2>
@@ -19,19 +23,14 @@ export async function getStaticPaths() {
       {
         params: { postId: `1` },
       },
-      {
-        params: { postId: `2` },
-      },
     ],
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps(context) {
   const { params } = context;
-  const response = await fetch(
-    `https://jsonplaceholder.io.com/posts/${params.postId}`
-  );
+  const response = await fetch(`http://localhost:4000/posts/${params.postId}`);
   const data = await response.json();
 
   return {

@@ -22,12 +22,12 @@ function ProductsList({ posts }) {
 export default ProductsList;
 
 export async function getStaticProps() {
-  const response = await fetch("https://jasonplaceholder.io.com/posts");
+  const response = await fetch("http://localhost:4000/posts");
   const data = await response.json();
 
   return {
     props: {
-      post: data,
+      posts: data,
     },
   };
 }
