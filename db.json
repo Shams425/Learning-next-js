@@ -41,5 +41,11 @@
       "title": "Cooking",
       "description": "post 3 description"
     }
-  ]
+  ],
+  "dashboard": {
+    "posts": 40,
+    "likes": 1200,
+    "followers": "14k",
+    "following": 100
+  }
 }

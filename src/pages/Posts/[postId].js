@@ -5,12 +5,13 @@ function PostDetails({ post }) {
   if (router.isFallback) {
     return <h1>Loading . . .</h1>;
   }
+
   return (
     <div key={post.id}>
       <h2>
         {post.id} {post.title}
       </h2>
-      <p>{post.body}</p>
+      <p>{post.description}</p>
     </div>
   );
 }
