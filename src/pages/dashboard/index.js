@@ -30,14 +30,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-export async function getServerSideProps() {
-  const response = await fetch("http://localhost:4000/dashboard");
-  const data = await response.json();
-
-  return {
-    props: {
-      dashboard: data,
-    },
-  };
-}
