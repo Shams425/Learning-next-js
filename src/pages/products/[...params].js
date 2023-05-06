@@ -7,11 +7,11 @@ function Products() {
 
   if (params.length === 1) {
     console.log(params);
-    return <>Detalis about {params[0]}</>;
+    return <>Details about {params[0]}</>;
   } else if (params.length === 2) {
     return (
       <>
-        Detalis about {params[0]} {params[1]}
+        Details about {params[0]} {params[1]}
       </>
     );
   } else {

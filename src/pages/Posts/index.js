@@ -25,9 +25,12 @@ export async function getStaticProps() {
   const response = await fetch("http://localhost:4000/posts");
   const data = await response.json();
 
+  console.log("calling with the validate time");
+
   return {
     props: {
       posts: data,
     },
+    revalidate: 10,
   };
 }
