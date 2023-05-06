@@ -1,11 +1,19 @@
+import { useRouter } from "next/router";
+
 export default function Product({ product }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <h1>Loading ...</h1>;
+  }
   return (
     <>
       <h2>
-        {product.id} {product.name}
+        {product.id}- {product.name}
       </h2>
       <h2>{product.description}</h2>
       <h2>{product.price}</h2>
+      <hr />
     </>
   );
 }
@@ -16,14 +24,8 @@ export async function getStaticPaths() {
       {
         params: { productId: "1" },
       },
-      {
-        params: { productId: "2" },
-      },
-      {
-        params: { productId: "3" },
-      },
     ],
-    fallback: false,
+    fallback: true,
   };
 }
 
