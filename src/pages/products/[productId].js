@@ -3,6 +3,10 @@ import { useRouter } from "next/router";
 export default function Product({ product }) {
   const router = useRouter();
 
+  const handleRoute = () => {
+    router.push("./");
+  };
+
   if (router.isFallback) {
     return <h1>Loading ...</h1>;
   }
@@ -13,6 +17,7 @@ export default function Product({ product }) {
       </h2>
       <h2>{product.description}</h2>
       <h2>{product.price}</h2>
+      <button onClick={handleRoute()}>Go Home</button>
       <hr />
     </>
   );
