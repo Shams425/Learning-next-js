@@ -4,7 +4,7 @@ export default function Product({ product }) {
   const router = useRouter();
 
   const handleRoute = () => {
-    router.push("./");
+    router.push("/");
   };
 
   if (router.isFallback) {
@@ -17,7 +17,7 @@ export default function Product({ product }) {
       </h2>
       <h2>{product.description}</h2>
       <h2>{product.price}</h2>
-      <button onClick={handleRoute()}>Go Home</button>
+      <button onClick={handleRoute}>Go Home</button>
       <hr />
     </>
   );
