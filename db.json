@@ -47,5 +47,31 @@
     "likes": 1200,
     "followers": "14k",
     "following": 100
-  }
+  },
+  "news": [
+    {
+      "id": 1,
+      "category": "sports",
+      "title": "Football Results",
+      "body": "This where you right the body of the article"
+    },
+    {
+      "id": 2,
+      "category": "food",
+      "title": "The best Restaurants around the world",
+      "body": "This where you right the body of the article"
+    },
+    {
+      "id": 3,
+      "category": "sports",
+      "title": "BasketBall Results",
+      "body": "This where you right the body of the article"
+    },
+    {
+      "id": 4,
+      "category": "economics",
+      "title": "Crypto News",
+      "body": "This where you right the body of the article"
+    }
+  ]
 }
