@@ -5,6 +5,7 @@ function Comments() {
   const [loading, setLoading] = useState(true);
 
   const fetchComments = async () => {
+    console.log(comments);
     const response = await fetch("api/comments");
     const data = await response.json();
     setComments(data);
@@ -16,15 +17,16 @@ function Comments() {
     <>
       <button onClick={fetchComments}>Comment</button>
 
-      {!loading &&
-        comments.map((comment) => {
+      {comments.map((comment) => {
+        return (
           <div key={comment.id}>
             <h1>
               {comment.id} {comment.title}
             </h1>
             <p>{comment.text}</p>
-          </div>;
-        })}
+          </div>
+        );
+      })}
     </>
   );
 }
