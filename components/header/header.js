@@ -1,8 +1,8 @@
-import "./header.css";
+import styles from "./header.module.css";
 
 function Header() {
   return (
-    <div className="headerContainer">
+    <div className={styles.headerContainer}>
       <h1>header</h1>
     </div>
   );
