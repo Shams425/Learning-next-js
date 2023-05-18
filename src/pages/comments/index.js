@@ -25,6 +25,11 @@ function Comments() {
     console.log(comments);
   };
 
+  const deleteHandler = async (id) => {
+    const response = await fetch(`api/comments/${id}`, { method: "DELETE" });
+    fetchComments();
+  };
+
   return (
     <>
       <div>
@@ -44,6 +49,9 @@ function Comments() {
               {comment.id} {comment.title}
             </h1>
             <p>{comment.text}</p>
+            <button onClick={() => deleteHandler(comment.id)}>
+              Delete comment
+            </button>
           </div>
         );
       })}
