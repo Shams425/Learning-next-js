@@ -2,7 +2,19 @@ import { useEffect, useState } from "react";
 
 function Comments() {
   const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const submitComment = async () => {
+    const response = await fetch("api/comments", {
+      method: "POST",
+      body: JSON.stringify(comment),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await response.json();
+    console.log(data);
+  };
 
   const fetchComments = async () => {
     console.log(comments);
@@ -15,7 +27,15 @@ function Comments() {
 
   return (
     <>
-      <button onClick={fetchComments}>Comment</button>
+      <div>
+        <input
+          type="text"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+        <button onClick={submitComment}>Submit Your comment</button>
+      </div>
+      <button onClick={fetchComments}>Load Comments</button>
 
       {comments.map((comment) => {
         return (
