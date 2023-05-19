@@ -8,6 +8,21 @@ function ImagePage() {
         alt="some random text"
         width="800"
         height="800"
+        placeholder="blur"
+      />
+      <Image
+        src={"/imgs/1.jpg"}
+        alt="some random text"
+        width="800"
+        height="800"
+        placeholder="blur"
+      />
+      <Image
+        src={"/imgs/1.jpg"}
+        alt="some random text"
+        width="800"
+        height="800"
+        placeholder="blur"
       />
     </>
   );
